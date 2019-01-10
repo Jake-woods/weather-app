@@ -5,6 +5,61 @@
 }
 
 body {
+  background: #271D2C;
+  background: repeating-linear-gradient(45deg, #271D2C 0%, #271D2C 10%, #221C21 0%, #221C21 50%) 0/15px 15px;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 0px rgba(255, 195, 30, 0.623);
+  }
+  to {
+    text-shadow: 0px 0px 40px rgba(255, 195, 30, 0.856);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 0px rgba(255, 195, 30, 0.623);
+  }
+  to {
+    text-shadow: 0px 0px 40px rgba(255, 195, 30, 0.856);
+  }
+}
+
+.loading-container {
+  background: #271D2C;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#271D2C), to(#221C21));
+  background-image: linear-gradient(#271D2C, #221C21);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.loading-container.loading-container_close {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-container .inner span i {
+  -webkit-animation: glow 1s alternate infinite;
+          animation: glow 1s alternate infinite;
+  color: rgba(255, 195, 30, 0.336);
+  font-size: 3.5rem;
 }
 /*# sourceMappingURL=style.css.map */
