@@ -19,11 +19,37 @@
 </head>
 
 <body>
+
    <div class="loading-container">
       <div class="inner">
          <span><i class="fas fa-cloud-sun"></i></span>
+         <h3 class="error-message"></h3>
       </div>
+      <!-- End of div.inner -->
    </div>
+   <!-- End of div.loading-container -->
+
+   <section id="card">
+      <h2 id="city"></h2>
+      <div class="items">
+         <div class="item" title="Humidity">
+            <i class="fas fa-tint"></i>
+            <h3 id="humidity"></h3>
+         </div>
+         <div class="item" title="Temperature">
+            <i class="fas fa-temperature-low"></i>
+            <h3 id="temp"></h3>
+         </div>
+         <div class="item" title="Wind speed">
+            <i class="fas fa-wind"></i>
+            <h3 id="wind"></h3>
+         </div>
+         <div class="item last" title="Type of weather">
+            <i class="fas fa-flag"></i>
+            <h3 id="type"></h3>
+         </div>
+      </div>
+   </section>
    <script src="./js/script.js"></script>
 </body>
 

@@ -1,3 +1,7 @@
+$clr-purple: #271D2C;
+$clr-purple2: #221C21;
+// Element styles
+
 * {
    box-sizing: border-box;
    font-family: inherit;
@@ -7,6 +11,7 @@ body {
    background: #271D2C;
    background: repeating-linear-gradient(45deg, #271D2C 0%, #271D2C 10%, #221C21 0%, #221C21 50%) 0/15px 15px;
    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+   overflow-x: hidden;
 }
 
 // Animations
@@ -23,7 +28,7 @@ body {
 // Main styles
 .loading-container {
    background: #271D2C;
-   background-image: linear-gradient(#271D2C, #221C21);
+   background-image: linear-gradient($clr-purple, $clr-purple2);
 
    display: flex;
    align-items: center;
@@ -38,6 +43,7 @@ body {
    left: 0;
    width: 100%;
    height: 100%;
+   z-index: 100;
 
    &.loading-container_close {
       opacity: 0;
@@ -45,11 +51,91 @@ body {
    }
 
    .inner {
+      text-align: center;
+
       span {
          i {
-            animation: glow 1s alternate infinite;
+            animation: glow 700ms alternate infinite;
             color: rgba(255, 195, 30, 0.336);
             font-size: 3.5rem;
+         }
+      }
+
+      h3 {
+         color: #fff;
+         font-weight: 300;
+         font-size: .9rem;
+         letter-spacing: .125em;
+         margin-top: 2em;
+         text-shadow: 0px 0px 10px rgba(255, 195, 30, 0.562);
+      }
+   }
+}
+
+section#card {
+   background: #fff;
+   box-shadow: 1px 1px 10px #333;
+   border-radius: 5px;
+   width: 25em;
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   h2 {
+      border-bottom: 1px solid rgba(51, 51, 51, 0.192);
+      color: #333;
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 0;
+      padding: 1.5em;
+      text-align: center;
+   }
+
+   div.items {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+
+      .item {
+         flex-basis: 25%;
+         padding: .75em;
+         text-align: center;
+         text-transform: capitalize;
+
+         h3,
+         i {
+            color: #333;
+            font-size: .9rem;
+         }
+
+         h3 {
+            font-weight: 300;
+            margin: .75em 0;
+         }
+
+         &:not(.last) {
+            border-right: 1px solid rgba(51, 51, 51, 0.233);
+         }
+      }
+   }
+}
+
+@media (max-width: 25em) {
+   section#card {
+      max-width: 20em;
+
+      div.items {
+         flex-flow: column nowrap;
+         align-items: initial;
+
+         .item {
+            &:not(.last) {
+               border-right: 0;
+               border-bottom: 1px solid rgba(51, 51, 51, 0.205);
+            }
          }
       }
    }
